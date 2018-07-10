@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>KnockoutJS - First Example</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.css">
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <div class="row"><span>The name is <span data-bind="text: personName"></span></div>
+        </div>
+
+        <script>
+            $(function() {
+                // This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+                var myViewModel = {
+                    personName: ko.observable('Felipe'),
+                    personAge: ko.observable(26)
+                };
+                // Activates knockout.js
+                ko.applyBindings(myViewModel);
+            });
+        </script>
+        <script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.js"></script>
+    </body>
+</html>
